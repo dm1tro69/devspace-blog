@@ -4,6 +4,7 @@ import fs from 'fs'
 import matter from "gray-matter";
 import marked from "marked";
 import Link from 'next/link'
+import Image from "next/image";
 import Layout from "../../compnents/Layout";
 import CategoryLabel from "../../compnents/CategoryLabel";
 
@@ -16,12 +17,14 @@ export default function PostPage({frontmatter: { title, category, date, cover_im
                     <h1 className='text-5xl mb-7'>{title}</h1>
                     <CategoryLabel>{category}</CategoryLabel>
                 </div>
-                <img src={cover_image} alt='' className='w-full rounded' />
+                <Image src={cover_image} alt='' className='w-full rounded' width={1100} height={600} />
 
                 <div className='flex justify-between items-center bg-gray-100 p-2 my-8'>
                     <div className='flex items-center'>
-                        <img
+                        <Image
                             src={author_image}
+                            width={10}
+                            height={10}
                             alt=''
                             className='mx-4 w-10 h-10 object-cover rounded-full hidden sm:block'
                         />
